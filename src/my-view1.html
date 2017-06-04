@@ -1,0 +1,80 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view1">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 64px);
+        max-height: calc(100vh - 64px);
+        box-sizing: border-box;
+        padding: 10px;
+
+        --paper-button-flat-keyboard-focus: {
+          font-weight: normal;
+        }
+      }
+      iron-image {
+        flex-basis: 50%;
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+      iron-form {
+        flex-basis: 50%;
+        flex-shrink: 1;
+        flex-grow: 0;
+      }
+    </style>
+
+    <h1>Add Keywords</h1>
+    <iron-image
+      sizing="contain"
+      src="https://ssl.c.photoshelter.com/img-get2/I0000RDWhV9drjQo/sec=wdfsdfoeflwefms1440ed20170606GYHn.7x6NCIt.Rc/fit=1040"
+    ></iron-image>
+    <iron-form>
+      <form method="get" action="/form/handler">
+        <paper-input
+          no-label-float
+          placeholder="Add new keyword"
+        ></paper-input>
+        <paper-input
+          no-label-float
+          placeholder="Add new keyword"
+        ></paper-input>
+        <paper-input
+          no-label-float
+          placeholder="Add new keyword"
+        ></paper-input>
+        <paper-input
+          no-label-float
+          placeholder="Add new keyword"
+        ></paper-input>
+        <paper-button>Submit Keywords</paper-button>
+      </form>
+    </iron-form>
+  </template>
+
+  <script>
+    class MyView1 extends Polymer.Element {
+      static get is() { return 'my-view1'; }
+    }
+
+    window.customElements.define(MyView1.is, MyView1);
+  </script>
+</dom-module>
